@@ -3,21 +3,19 @@ pipeline {
 
     stages {
 
-        stage('Install Dependencies') {
+        stage('Build Image') {
             steps {
-                sh 'npm install'
+                sh 'docker build -t express-app .'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npm test'
-            }
-        }
-
-        stage('Build Docker Image') {
-            steps {
-                sh 'docker build -t express-app .'
+                sh '''
+                docker run --rm \
+                    express-app \
+                    npm test
+                '''
             }
         }
 
