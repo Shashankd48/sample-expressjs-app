@@ -15,7 +15,7 @@ app.get("/new", (req, res) => {
 })
 
 app.get("/api", (req, res) => {
-   res.status(200).json({ version: "3.0", message: "This is our new updated message" })
+   res.status(200).json({ version: "3.0", message: "This is our new updated message", author: "Shashank Dubey" })
 })
 
 app.listen(port, () => {
