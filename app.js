@@ -10,6 +10,10 @@ app.get("/status", (req, res) => {
    res.status(200).json({ name: "Sanjay Singh", age: 24 });
 });
 
+app.get("/new", (req, res) => {
+   res.status(200).json({ version: "2.0" })
+})
+
 app.listen(port, () => {
    console.log(`Example app listening on port ${port}`);
    console.log(`Open in your browser http://localhost:${port}`);
