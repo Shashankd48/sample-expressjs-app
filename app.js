@@ -15,7 +15,7 @@ app.get("/new", (req, res) => {
 })
 
 app.get("/api", (req, res) => {
-   res.status(200).json({ version: "2.0" })
+   res.status(200).json({ version: "3.0", message: "Hello world" })
 })
 
 app.listen(port, () => {
